@@ -10,5 +10,5 @@ fi
 
 echo "Starting with --genpoi  ..."
 /usr/bin/overviewer.py --config /overviewer/overviewer.cfg --genpoi
-echo "Starting render with -v ..."
-/usr/bin/overviewer.py --config /overviewer/overviewer.cfg -v
+echo "Starting map render now ..."
+/usr/bin/overviewer.py --config /overviewer/overviewer.cfg
