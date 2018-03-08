@@ -16,7 +16,7 @@ RUN apt-get update && \
       sudo \
       wget
 
-ADD ./overviewer/
+ADD ./overviewer/ /overviewer/
 
 RUN chmod +x /overviewer/overviewer.sh && \
     echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
