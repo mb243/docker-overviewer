@@ -1,5 +1,11 @@
 FROM ubuntu:16.04
 
+#
+# Get WORLD_LOCATION from the command line. This is the location of the Minecraft world
+# Get WWW_LOCATION from the command line. This is the location where the files will be written
+# Get CONFIG from the command line. This is a pointer to the config file
+#
+
 ENV REV 1.12.2
 
 RUN apt-get update && \
@@ -10,7 +16,10 @@ RUN apt-get update && \
       sudo \
       wget
 
-RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
+ADD ./overviewer/
+
+RUN chmod +x /overviewer/overviewer.sh && \
+    echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
     wget -O - https://overviewer.org/debian/overviewer.gpg.asc | sudo apt-key add - && \
     apt-get update && \
     apt-get install minecraft-overviewer && \
@@ -20,4 +29,4 @@ RUN echo "deb https://overviewer.org/debian ./" >> /etc/apt/sources.list && \
 
 VOLUME /overviewer/
 
-ENTRYPOINT ["/usr/bin/overviewer.py", "--config", "/overviewer/overviewer.cfg", "--check-tiles", "-v"]
+ENTRYPOINT ["/overviewer/overviewer.sh"]
