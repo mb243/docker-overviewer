@@ -1,11 +1,5 @@
 FROM ubuntu:16.04
 
-#
-# Get WORLD_LOCATION from the command line. This is the location of the Minecraft world
-# Get WWW_LOCATION from the command line. This is the location where the files will be written
-# Get CONFIG from the command line. This is a pointer to the config file
-#
-
 ENV REV 1.12.2
 
 RUN apt-get update && \
