@@ -8,6 +8,10 @@ if [[ "$REV" == "" ]]; then
   exit 1
 fi
 
+mkdir -p ~/.minecraft/versions/${REV}/ && \
+curl -o ~/.minecraft/versions/${REV}/${REV}.jar -L \
+  https://s3.amazonaws.com/Minecraft.Download/versions/${REV}/${REV}.jar
+
 echo "Starting with --genpoi  ..."
 /usr/bin/python /usr/bin/overviewer.py --config /overviewer/overviewer.cfg --genpoi
 echo "Starting map render now ..."
