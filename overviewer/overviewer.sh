@@ -9,6 +9,6 @@ if [[ "$REV" == "" ]]; then
 fi
 
 echo "Starting with --genpoi  ..."
-/usr/bin/overviewer.py --config /overviewer/overviewer.cfg --genpoi
+/usr/bin/python /usr/bin/overviewer.py --config /overviewer/overviewer.cfg --genpoi
 echo "Starting map render now ..."
-/usr/bin/overviewer.py --config /overviewer/overviewer.cfg
+/usr/bin/python /usr/bin/overviewer.py --config /overviewer/overviewer.cfg
